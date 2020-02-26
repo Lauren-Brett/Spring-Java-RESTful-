@@ -57,7 +57,7 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
     }
 
     @Transactional
-    public List<Distillery> getAllWhiskiesForDistilleryForYear(String name, int age){
+    public List<Distillery> getAllWhiskiesForDistilleryForAge(String name, int age){
         List<Distillery> result = null;
         Session session = entityManager.unwrap(Session.class);
 
