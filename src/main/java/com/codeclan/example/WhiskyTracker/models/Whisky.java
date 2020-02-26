@@ -1,5 +1,7 @@
 package com.codeclan.example.WhiskyTracker.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,11 +21,12 @@ public class Whisky {
     @Column(name = "age")
     private int age;
 
+    @JsonIgnoreProperties("whiskies")
     @ManyToOne
     @JoinColumn(name = "distillery_id", nullable = false)
     private Distillery distillery;
 
-    public Whisky(String name, int age,int year, Distillery distillery) {
+    public Whisky(String name, int age, int year, Distillery distillery) {
         this.name = name;
         this.age = age;
         this.year = year;
