@@ -25,7 +25,6 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
 
         try {
         Criteria criteria = session.createCriteria(Distillery.class);
-//        criteria.createAlias("distilleries", "distilleriesAlias");
         criteria.add(Restrictions.eq("region", region));
 
             result = criteria.list();
