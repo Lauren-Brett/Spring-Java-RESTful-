@@ -32,6 +32,9 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
       catch (HibernateException ex) {
           ex.printStackTrace();
       }
+        finally {
+            session.close();    
+        }
 
         return result;
     }
